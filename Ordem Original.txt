@@ -1,0 +1,217 @@
+--------------------------------------------------------------------------------------------------------------------------------
+Regra1 -> Exclusão de Risco Crítico Automático
+
+I.	PEP;
+II.	Beneficiários de produtos de acumulação classificados como alto risco ou beneficiários PEP;
+III.	Cliente localizado em país classificado como deficiência nos controles de PLD pelo GAFI;
+IV.	Clientes sem presença física no país de incorporação;
+V.	Situação Cadastral do CNPJ;
+VI.	Envolvimento em mídia negativa;
+VII.	Sanções nacionais; e 
+VIII.	Sanções internacionais
+IX.	Nlist  – Impedidos: este último gera recusa do relacionamento comercial 
+
+Regra1_Atual -> Os itens de I à VIII classificar automaticamente no pilar de risco crítico.
+
+Regra1_Futura -> Os itens de I à VII deixam de classificar automaticamente no pilar de risco crítico e serão fatores de composição do risco, conforme pontuação atribuída a cada um deles, conforme ANEXO III.
+No anexo III tem 35 -> listas que tornarei tabelas 
+Regra1_Futura_Lista 1 de 33 -> Acordos de Leniência - CGU.
+.
+.
+.
+Regra1_Futura_Lista 33 de 33 -> Mudança recorrente de endereço Postal.
+Quanto ao item IX as restrições existentes para regra de partes constantes na Nlist – Impedidos. Nos sistemas de venda, independentemente do canal, ao inserir o CPF do cliente titular / segurado para contratação, caso o retorno da consulta tenha marcação de “impedido” igual a “sim”, o sistema deverá bloquear a contratação do seguro. O sistema deve manter a mesma mensagem que é apresentada atualmente.
+.
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Regra2 -> Inclusão de Transações como fator de risco
+
+Regra2_Atual -> O pilar transação considera a quantidade de alertas e comunicações ao COAF.
+
+Regra2_Futura -> As transações passam a ser os possíveis movimentos realizados nas apólices/certificados
+
+ Regra2_Futura.1 - Previdência
+	Regra2_Futura.1.1-Adesão previdência
+	Regra2_Futura.1.2-Aporte previdência
+	Regra2_Futura.1.3-Contribuição previdência
+	Regra2_Futura.1.4-Resgate Previdência
+	Regra2_Futura.1.5-Resgate previdência no exterior PF
+	Regra2_Futura.1.6-Cancelamento previdência carência (<= 7 dias)
+
+ Regra2_Futura.2 - Seguro (Vida e Prestamista)
+	Regra2_Futura.2.1-Contratação seguro 
+	Regra2_Futura.2.2-Alteração de beneficiário com sinistro em aberto 
+	Regra2_Futura.2.3-Restituição de prêmio
+	Regra2_Futura.2.4-Liquidação de sinistro 
+	Regra2_Futura.2.5-Liquidação de sinistro no exterior
+	Regra2_Futura.2.6-Liquidação de sinistro precoce (<30 dias da contratação)
+
+*fazer os subitens exemplo -> baseados no anexo IV
+		Regra2_Futura.1.2.1-Aporte previdência PF
+			Regra2_Futura.1.2.1.1->valor <= 10K -> risco baixo
+			Regra2_Futura.1.2.1.2->10k < valor <= 20K -> risco medio
+			Regra2_Futura.1.2.1.3->20k < valor <= 50K -> risco alto
+			Regra2_Futura.1.2.1.3->valor > 50K -> risco critico
+			
+		Regra2_Futura.1.2.2-Aporte previdência PJ
+			Regra2_Futura.1.2.2.1->valor <= 10K -> risco baixo
+			Regra2_Futura.1.2.2.2->10k < valor <= 20K -> risco medio
+			Regra2_Futura.1.2.2.3->20k < valor <= 50K -> risco alto
+			Regra2_Futura.1.2.2.3->valor > 50K -> risco critico
+
+Por exemplo uma adesão previdência PF de até R$ 10.000,00 recebe a classificação de risco baixo. Já a adesão previdência PF com valor de R$ 30.000,00 recebe a classificação de risco alto e assim por diante, a depender do tipo de movimentação que esteja sendo realizada e valor.
+Para os valores mencionados devem considerar operações individuais e/ou agrupadas nos últimos 12 meses para o mesmo produto.
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Regra3 -> Adequar a classificação dos produtos
+
+Regra3_Atual -> A classificação de riscos dos produtos do mesmo ramo recebe variações de classificação de riscos que consideram diferentes atributos para composição do risco. 
+		As variações de classificação inicial vão de Baixa a Elevado, que podem mudar de acordo com as características da contratação.
+
+
+Regra3_Futura -> A alteração simplificará o risco inicial do produto agrupando por ramo, pois os produtos originalmente recebem a classificação de risco abaixo, adotada para o ramo.
+	Regra3_Futura.1 - Ramo
+		Regra3_Futura.1.1-> Vida -> Risco Baixo
+		Regra3_Futura.1.2-> Prestamista -> Risco Baixo		
+		Regra3_Futura.1.3-> Previdência-> Risco Alto
+
+	Regra3_Futura.2 - Agravantes de Classificação
+		Regra3_Futura.2.1-> Forma de pagamento de prêmio permitida no momento da contratação.
+			Regra3_Futura.2.1.1-> Risco Inicial 20 -> Pagamento em espécie > 10k -> Não -> Mantem 20
+			Regra3_Futura.2.1.2-> Risco Inicial 20 -> Pagamento em espécie > 10k -> Não -> Mantem 20
+			Regra3_Futura.2.1.3-> Risco Inicial 50 -> Pagamento em espécie > 10k -> Não -> Mantem 20
+		Regra3_Futura.2.2-> Contratação por meio remoto.
+			Regra3_Futura.2.2.1-> Risco Inicial 20 -> Via(Web/ATM/Apps) -> Não -> Mantem 20
+			Regra3_Futura.2.2.2-> Risco Inicial 20 -> Via(Web/ATM/Apps) -> Não -> Mantem 20
+			Regra3_Futura.2.2.3-> Risco Inicial 50 -> Via(Web/ATM/Apps) -> Não -> Mantem 20
+		Regra3_Futura.2.3-> Permissão ou não de contratação por terceiros.
+			Regra3_Futura.2.3.1-> Risco Inicial 20 -> Via terceiros -> Não -> Mantem 20
+			Regra3_Futura.2.3.2-> Risco Inicial 20 -> Via terceiros -> Não -> Mantem 20
+			Regra3_Futura.2.3.3-> Risco Inicial 50 -> Via terceiros -> Não -> Mantem 20
+		Regra3_Futura.2.4-> Contratação por parceiros externos (sem vínculo com a rede da Caixa Econômica Federal).
+			Regra3_Futura.2.4.1-> Risco Inicial 20 -> Fora da Rede Caixa -> Não -> Mantem 20
+			Regra3_Futura.2.4.2-> Risco Inicial 20 -> Fora da Rede Caixa -> Não -> Mantem 20
+			Regra3_Futura.2.4.3-> Risco Inicial 50 -> Fora da Rede Caixa -> Não -> Mantem 20
+
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+Regra4 -> Autonomia para alteração de regras – Compliance
+
+Regra4_Atual -> Inexistente no motor 
+
+Regra4_Futura -> Criar módulo para facilitar a gestão das regras do motor pela área de compliance como usuário master, 
+		 de modo a facilitar ajustes de pontuações necessários e que façam sentido ao negócio, mantendo possíveis logs de alteração.
+
+Esforço: Consenso de complexidade e minimo de 6 meses.
+Data prevista início:
+Data prevista fim:
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Regra5 -> Revisão das alçadas e origem dos recursos
+
+Regra5_Atual -> Inexistente no motor 
+
+Regra5_Futura -> É obrigatória a obtenção de autorização das alçadas superiores para o estabelecimento ou prosseguimento da relação de negócios já existente com clientes de maior risco (alto ou crítico),
+		 inclusive administrador, controlador, procurador, sócio, representante legal ou responsável financeiro.
+		Após a classificação do perfil de risco, deverá ser encaminhado para Aprovação de alçada superior de cliente na condição de maior risco (alto ou crítico):
+		Pendência para aprovação da área operacional (Gerente / Superintendente / Diretor)
+		A proposta de cliente ou proponente na condição de maior risco (alto ou crítico) deverá ser direcionada para ‘Pendência’ e somente sequenciar após aprovação ou retorno em caso de reprovação
+		O back-end deverá gerar uma crítica e apresentar em tela as pendências de aprovação com o status ‘pendente’.
+		A equipe da Superintendência de Operações, procederá à aprovação. 
+		A aprovação deverá ser baseada na análise de critérios definidos para aceite de subscrição ou diligências sobre o perfil do cliente para auxiliar na fundamentação da decisão, 
+		de acordo com as peculiaridades do caso concreto e a gravidade e natureza das informações desabonadoras ou irregularidades encontradas.
+		As alçadas devem ser parametrizadas.
+
+	Regra5_Futura.1 - N° de aprovadores para risco -> alto -> 1 (alçada simples/única)
+		Regra5_Futura.1.1-> Alçada1 -> Gerente de Operações
+	Regra5_Futura.2 - N° de aprovadores para risco -> crítico e valor <= 50k -> 2 (alçada dupla)
+		Regra5_Futura.2.1-> Alçada1 -> Gerente de Operações
+		Regra5_Futura.2.1-> Alçada2 -> Superintendente de Operações
+	Regra5_Futura.3 - N° de aprovadores para risco -> crítico e valor > 50k -> 3 (alçada tripla)
+		Regra5_Futura.3.1-> Alçada1 -> Gerente de Operações
+		Regra5_Futura.3.2-> Alçada2 -> Superintendente de Operações
+		Regra5_Futura.3.3-> Alçada3 -> Diretor de Operações
+
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+Regra6 -> Adequar a classificação de risco para cada lista restritivas e armazenar as consultas realizadas
+
+Regra6_Atual -> Inexistente no motor -> As consultas são realizadas no bureau de dados e retornam com resultado binário, não são armazenadas as informações e evidências qualitativas da consulta.
+
+Regra6_Futura -> As consultas realizadas no bureau de dados devem ser armazenadas como evidência e cada listagem deverá receber uma nota específica, de acordo com sua criticidade, conforme ANEXO III.
+- CGU -> tem 3 listas, só constar em uma a nota -> 50 ?
+- Acordo de Leniência
+- CPIM
+- CEAF
+- CNEP
+- TSE Doadores Partidos Políticos
+- MPF
+- STF
+- STJ
+- IBAMA
+- PEP
+- Trabalho Escravo
+- Mídia negativa
+- CADE
+- CNJ - Improbidade Administrativa
+-----------------------------------------------------------------------------------------------------------------------------------
+Regra7 -> Ajustar fatores de composição do risco
+
+Regra7_Atual -> Como o processo ocorre: Além dos riscos críticos automáticos que deverão ser excluídos conforme mencionado acima, o motor de risco faz a junção de alguns fatores que permitem a 
+		classificação do cliente como risco baixo, médio, alto ou crítico, tais fatores são:
+		Atributos do cliente
+		Localização geográfica
+		Produtos
+		Transações
+		Cada um dos critérios acima recebe uma pontuação específica e a somatória corresponde ao risco final do cliente.
+
+
+Regra7_Futura -> A composição do risco será composta por 3 fatores, que são:
+		Score Transação (transação detalhada em item anterior(Regra2) e receberá pontuação individual conforme ANEXO IV) 
+		Score Produto (revisado conforme detalhado em item anterior(Regra3))
+		Score listas restritivas (revisado conforme detalhado em item anterior(Regra1))
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+regra8 -> Classificação do beneficiário incluído posteriormente ou troca de beneficiário (durante a vigência e/ou sinistro)
+
+Regra8_Atual -> Inexistente no motor 
+
+Regra8_Futura -> Sempre que houver a inclusão de beneficiário anteriormente desconhecido, alteração durante a vigência da apólice/certificado, 
+		o motor de riscos deverá realizar a classificação de riscos seguindo os critérios estabelecidos e elencados em itens anteriores.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+regra9 -> Dados cadastrais de acordo com o nível de risco
+
+Regra9_Atual -> Inexistente no motor -> Os dados cadastrais vêm diretamente dos front-ends e não são padronizados para serem coletados de acordo com nível de risco, 
+		conforme previsto na Avaliação Interna de Riscos.
+ 
+Regra9_Futura -> A depender do nível de risco identificado através do motor de riscos, deverão ser coletados os seguintes dados cadastrais.
+	Definir melhor
+	(As informações de cadastro incompletas ou não informadas podem agravar o perfil de risco dos clientes, podendo impactar na aceitação da proposta, 
+		caso não sejam encontradas via diligência, no momento da classificação do risco.)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+regra10 -> Atualização dos dados cadastrais e revalidação do risco de acordo com o nível de risco
+
+Regra10_Atual -> Inexistente no motor -> Não há processo estabelecido para atualização cadastral e revalidação do nível de risco de acordo com as regras da Avaliação Interna de Riscos. 
+		Atualmente são realizadas ações esporádicas para incentivar que a atualização cadastral ocorra, mas ainda assim não seguem a padronização de prazo.
+
+Regra10_Futura -> O motor de riscos deverá revalidar o risco do cliente seguindo a periodicidade abaixo, assim como gerar alertas nos back-ends 
+		sobre a necessidade de atualização dos dados cadastrais do cliente.
+
+Faixa de risco Baixo – a cada 2 anos
+Faixa de risco Média – a cada 2 anos
+Faixa de risco Alto – a cada 1 ano
+Faixa de risco Crítico - semestral
+-----------------------------------------------------------------------------------------------------------------------------------

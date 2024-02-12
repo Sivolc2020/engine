@@ -1,0 +1,439 @@
+Separar em regras
+Regra1_Atual -> inclui VIII?
+Aonde está o anexo I ?
+Quadro de transações relacionado a regra2 -> anexo IV quero a planilha.
+No anexo III tem 35 -> listas que tornarei tabelas  existem essas tabelas ? como faço para ter acesso
+
+--------------------------------------------------------------------------------------------------------------------------------
+r1 -> Regra1 -> Exclusão de Risco Crítico Automático
+#r1->Listas Restritivas -> já consulta o Nlist	
+#Regra1_Atual -> Os itens de I à VIII classificar automaticamente no pilar de risco crítico.	
+
+I.	PEP;
+II.	Beneficiários de produtos de acumulação classificados como alto risco ou beneficiários PEP;
+III.	Cliente localizado em país classificado como deficiência nos controles de PLD pelo GAFI;
+IV.	Clientes sem presença física no país de incorporação;
+V.	Situação Cadastral do CNPJ;
+VI.	Envolvimento em mídia negativa;
+VII.	Sanções nacionais; e 
+VIII.	Sanções internacionais
+IX.	Nlist  – Impedidos: este último gera recusa do relacionamento comercial 
+
+Regra1_Atual -> Os itens de I à VIII classificar automaticamente no pilar de risco crítico.
+
+Regra1_Futura -> Os itens de I à VII deixam de classificar automaticamente no pilar de risco crítico e serão fatores de composição do risco, conforme pontuação atribuída a cada um deles, conforme ANEXO III.
+No anexo III tem 35 -> listas que tornarei tabelas 
+
+ Regra1_Futura.1 - Listas Restritivas -> Classificação do Risco - lista	Pontuação	Listas Restritivas 
+ -----------------------------------------------------------------------------------------------------------------------------------------------------  
+   Regra1_Futura.1.1->Lista01	Alto	50	Acordos de Leniência - CGU
+   Regra1_Futura.1.2->Lista02	Alto	50	Acordos de Leniência - MPF
+   Regra1_Futura.1.3->Lista03	Alto	50	Entidades Privadas Sem Fins Lucrativos Impedidas - CEPIM (CGU)
+   Regra1_Futura.1.4->Lista04	Alto	50	Expulsões da Administração Federal - CEAF (CGU)
+   Regra1_Futura.1.5->Lista05	Alto	50	Transparência Brasil - CNEP
+   Regra1_Futura.1.6->Lista06	Alto	50	TSE - Doadores
+   Regra1_Futura.1.7->Lista07	Alto	50	Antecedente Criminal (Polícia Federal)
+   Regra1_Futura.1.8->Lista08	Alto	50	MPF
+   Regra1_Futura.1.9->Lista09	Alto	50	STF
+   Regra1_Futura.1.10->Lista10	Alto	50	STJ
+   Regra1_Futura.1.11->Lista11	Alto	50	Mídia Negativa
+   Regra1_Futura.1.12->Lista12	Alto	50	PEP
+   Regra1_Futura.1.13->Lista13	Alto	50	Nlist
+   Regra1_Futura.1.14->Lista14	Alto	50	Cliente comunicado ao COAF até duas vezes no mesmo ano civil
+   Regra1_Futura.1.15->Lista15	Alto	50	Beneficiário outros ou que seja indicado em diversos certificados
+   Regra1_Futura.1.16->Lista16	Alto	50	Pagamentos de indenizações e/ou resgates sem devida identificação cadastral de todas partes (segurado ou terceiros)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------  
+   Regra1_Futura.1.17->Lista17	BLOQUEIO	UN SECURITY COUNCIL SANCTION LIST (CSNU)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------
+   Regra1_Futura.1.18->Lista18	Crítico	60	EU CONSOLIDATED LISTS OF SANCTION
+   Regra1_Futura.1.19->Lista19	Crítico	60	OFAC
+   Regra1_Futura.1.20->Lista20	Crítico	60	MTE - Trabalho Escravo
+   Regra1_Futura.1.21->Lista21	Crítico	60	Mídia Negativa
+   Regra1_Futura.1.22->Lista22	Crítico	60	Cliente estrangeiro com origem e/ou filiais em pais com deficiências apresentadas por órgãos como GAFI, OFAC, EU e/ou paraísos fiscais
+   Regra1_Futura.1.23->Lista23	Crítico	60	Objeto Social de alto risco ou ONG
+   Regra1_Futura.1.24->Lista24	Crítico	60	CPF/CNPJ inativo/inapto na Receita Federal
+   Regra1_Futura.1.25->Lista25	Crítico	60	Impossibilidade de identificar os beneficiários finais  (proprietários e sócios) 
+   Regra1_Futura.1.26->Lista26	Crítico	60	Empresa sem presença física no país
+   Regra1_Futura.1.27->Lista27	Crítico	60	Operação realizada com pessoas localizadas em países que estão listados como deficientes em controles PLD-FT, conforme indicado por Órgãos como: GAFI, ONU, OFAC, etc
+   Regra1_Futura.1.28->Lista28	Crítico	60	Contratação por clientes estrangeiros sem coleta de dados de identificação
+ -----------------------------------------------------------------------------------------------------------------------------------------------------
+   Regra1_Futura.1.29->Lista29	Médio	30	PEP RELACIONADO
+   Regra1_Futura.1.30->Lista30	Médio	30	CADE - CONSELHO ADMINISTRATIVO DE DEFESA ECONÔMICA
+   Regra1_Futura.1.31->Lista31	Médio	30	CNJ Improbidade Administrativa
+   Regra1_Futura.1.32->Lista32	Médio	30	EMBARGOS DO IBAMA
+   Regra1_Futura.1.33->Lista33	Médio	30	Endereço de cadastro em região fronteiriça 
+   Regra1_Futura.1.34->Lista34	Médio	30	Resistência ao fornecimento de informações necessárias para o início de relacionamento ou para a atualização cadastral
+   Regra1_Futura.1.35->Lista35	Médio	30	Mudança recorrente de endereço postal
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quanto ao item IX as restrições existentes para regra de partes constantes na Nlist – Impedidos. 
+Nos sistemas de venda, independentemente do canal, ao inserir o CPF do cliente titular / segurado para contratação, 
+caso o retorno da consulta tenha marcação de “impedido” igual a “sim”, o sistema deverá bloquear a contratação do seguro. 
+O sistema deve manter a mesma mensagem que é apresentada atualmente.
+.
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+r2 -> Regra3 -> Adequar a classificação dos produtos
+##r3 -> Regra3 -> Adequar a classificação dos produtos
+#r3->Entender se é na contratação ou pos-contratação
+#Regra3_Atual -> A classificação de riscos dos produtos do mesmo ramo recebe variações de classificação de riscos
+************************
+Estão faltando as linhas para Alto e Critico.
+Qual a diferença entre parceiros externos (sem vínculo com a rede da Caixa Econômica Federal) e Permissão ou não de contratação por terceiros -> Qual tabela tem essas informações.
+Tudo é CONTRATAÇÃO ? não 
+*********************************
+
+Regra3_Atual -> A classificação de riscos dos produtos do mesmo ramo recebe variações de classificação de riscos que consideram diferentes atributos para composição do risco. 
+		As variações de classificação inicial vão de Baixa a Elevado, que podem mudar de acordo com as características da contratação.
+
+
+Regra3_Futura -> A alteração simplificará o risco inicial do produto agrupando por ramo, pois os produtos originalmente recebem a classificação de risco abaixo, adotada para o ramo.
+	
+	Regra3_Futura.1 - Ramo
+	 Regra3_Futura.1.1-> Vida -> Risco Baixo
+      Regra3_Futura.1.1.1-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Não' -> Soma 20 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 100 (de 100 até 129 risco Baixo) -> Risco Baixo
+      Regra3_Futura.1.1.2-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 130 (de 130 até 149 risco Médio) -> Risco Médio		
+      Regra3_Futura.1.1.3-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 140 (de 130 até 149 risco Médio) -> Risco Médio		
+      Regra3_Futura.1.1.4-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 150 (de 150 até 159 risco  Alto) -> Risco Alto		
+      Regra3_Futura.1.1.5-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Sim' -> Soma 30 --> Somatório total -> 160 (de 150 até 159 risco  Alto) -> Risco Alto		
+		
+	 Regra3_Futura.1.2-> Prestamista -> Risco Baixo	
+      Regra3_Futura.1.2.1-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Não' -> Soma 20 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 100 (de 100 até 129 risco Baixo) -> Risco Baixo
+      Regra3_Futura.1.2.2-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 130 (de 130 até 149 risco Médio) -> Risco Médio		
+      Regra3_Futura.1.2.3-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 140 (de 130 até 149 risco Médio) -> Risco Médio		
+      Regra3_Futura.1.2.4-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 150 (de 150 até 159 risco  Alto) -> Risco Alto		
+      Regra3_Futura.1.2.5-> Risco Inicial 20 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Sim' -> Soma 30 --> Somatório total -> 160 (de 150 até 159 risco  Alto) -> Risco Alto		
+
+	 Regra3_Futura.1.3-> Previdência-> Risco Alto
+      Regra3_Futura.1.3.1-> Risco Inicial 50 --> 'Pagamento em espécie > 10k' -> 'Não' -> Soma 20 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 130 (de 130 até 149 risco Médio) -> Risco Médio
+      Regra3_Futura.1.3.2-> Risco Inicial 50 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Não' -> Soma 20 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 160 (de 150 até 169 risco  Alto) -> Risco Alto		
+      Regra3_Futura.1.3.3-> Risco Inicial 50 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Não' -> Soma 20 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 170 (acima de 169 risco Critico) -> Risco Critico		
+      Regra3_Futura.1.3.4-> Risco Inicial 50 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Não' -> Soma 20 --> Somatório total -> 180 (acima de 169 risco Critico) -> Risco Critico		
+      Regra3_Futura.1.3.5-> Risco Inicial 50 --> 'Pagamento em espécie > 10k' -> 'Sim' -> Soma 50 --> 'Via(Web/ATM/Apps)' -> 'Sim' -> Soma 30 --> 'Via terceiros' -> 'Sim' -> Soma 30 --> 'Fora da Rede Caixa' -> 'Sim' -> Soma 30 --> Somatório total -> 190 (acima de 169 risco Critico) -> Risco Critico		
+
+
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+r3 -> Regra2 -> Inclusão de Transações como fator de risco
+##r4 -> Regra2 -> Inclusão de Transações como fator de risco
+*********************************************
+Transações como fator de risco -> separar o que é CONTRATAÇÃO e o que é transação POS-CONTRATAÇÃO.
+#r4 -> Entender se é pos-contratação ou seja atualizaro risco
+*********************************************
+#Regra2_Atual -> O pilar transação considera a quantidade de alertas e comunicações ao COAF.
+
+
+Regra2_Atual -> O pilar transação considera a quantidade de alertas e comunicações ao COAF.
+
+Regra2_Futura -> As transações passam a ser os possíveis movimentos realizados nas apólices/certificados
+
+ Regra2_Futura.1 - Previdência
+	Regra2_Futura.1.1-Adesão previdência->contratação
+	 Regra2_Futura.1.1.1-Adesão previdência->PF
+      Regra2_Futura.1.1.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.1.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.1.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.1.1.3->valor > 50K -> risco critico	 
+	  
+	 Regra2_Futura.1.1.2-Adesão previdência->PJ
+      Regra2_Futura.1.1.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.1.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.1.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.1.2.3->valor > 50K -> risco critico		 
+
+	 Regra2_Futura.1.1.3-Cancelamento previdência carência (<= 7 dias)
+      Regra2_Futura.1.1.3.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.1.3.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.1.3.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.1.3.3->valor > 50K -> risco critico
+    -------------------------------------------------------------------------------
+	Regra2_Futura.1.2-Aporte previdência-> é contratação contratação ?
+	 Regra2_Futura.1.2.1-Aporte previdência->PF
+      Regra2_Futura.1.2.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.2.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.2.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.2.1.3->valor > 50K -> risco critico	 
+	  
+	 Regra2_Futura.1.2.2-Aporte previdência->PJ
+      Regra2_Futura.1.2.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.2.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.2.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.2.2.3->valor > 50K -> risco critico	
+    -------------------------------------------------------------------------------
+	Regra2_Futura.1.3-Contribuição previdência-> é contratação contratação ?
+	 Regra2_Futura.1.3.1-Contribuição previdência->PF
+      Regra2_Futura.1.3.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.3.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.3.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.3.1.3->valor > 50K -> risco critico	 
+	  
+	 Regra2_Futura.1.3.2-Contribuição previdência->PJ
+      Regra2_Futura.1.3.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.3.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.3.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.3.2.3->valor > 50K -> risco critico	
+    -------------------------------------------------------------------------------
+	
+    -------------------------------------------------------------------------------  
+	Regra2_Futura.1.4-Resgate Previdência-> é contratação contratação ?
+	 Regra2_Futura.1.4.1-Resgate Previdência->PF
+      Regra2_Futura.1.4.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.4.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.4.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.4.1.3->valor > 50K -> risco critico	 
+	  
+	 Regra2_Futura.1.4.2-Resgate Previdência->No exterior PF
+      Regra2_Futura.1.4.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.1.4.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.1.4.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.1.4.2.3->valor > 50K -> risco critico	
+---------------------------------------------------------------------------------   
+ Regra2_Futura.2 - Seguro (Vida)
+  Regra2_Futura.2.1-Contratação seguro Vida
+   Regra2_Futura.2.1.1-Contratação seguro Vida-> PF
+      Regra2_Futura.2.1.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.1.4->valor > 50K -> risco critico	     
+
+   Regra2_Futura.2.1.2-Contratação seguro Vida-> PJ
+      Regra2_Futura.2.1.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.2.4->valor > 50K -> risco critico	    
+
+   Regra2_Futura.2.1.3-Alteração de beneficiário com sinistro em aberto (PF ou PJ ?)
+      Regra2_Futura.2.1.3.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.3.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.3.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.3.4->valor > 50K -> risco critico	
+
+   Regra2_Futura.2.1.4-Restituição de prêmio PF
+      Regra2_Futura.2.1.4.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.4.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.4.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.4.4->valor > 50K -> risco critico	
+
+   Regra2_Futura.2.1.5-Restituição de prêmio PJ
+      Regra2_Futura.2.1.5.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.5.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.5.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.5.4->valor > 50K -> risco critico
+
+   Regra2_Futura.2.1.6-Liquidação de sinistro (PF ou PJ ?)
+      Regra2_Futura.2.1.6.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.2.1.6.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.2.1.6.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.2.1.6.4->valor > 50K -> risco critico
+
+	---------------------------------------------------------------------------------
+  Regra2_Futura.3 - Seguro (Prestamista)
+  Regra2_Futura.3.1-Contratação seguro Prestamista
+   Regra2_Futura.3.1.1-Contratação seguro Prestamista-> PF
+      Regra2_Futura.3.1.1.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.1.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.1.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.1.4->valor > 50K -> risco critico	     
+
+   Regra2_Futura.3.1.2-Contratação seguro Prestamista-> PJ
+      Regra2_Futura.3.1.2.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.2.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.2.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.2.4->valor > 50K -> risco critico  
+  
+   Regra2_Futura.3.1.3-Restituição de prêmio PF
+      Regra2_Futura.3.1.3.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.3.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.3.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.3.4->valor > 50K -> risco critico	     
+
+   Regra2_Futura.3.1.4-Restituição de prêmio PJ
+      Regra2_Futura.3.1.4.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.4.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.4.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.4.4->valor > 50K -> risco critico   
+
+
+    Regra2_Futura.3.1.5-Liquidação de sinistro PF
+      Regra2_Futura.3.1.5.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.5.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.5.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.5.4->valor > 50K -> risco critico	     
+
+   Regra2_Futura.3.1.6-Liquidação de sinistro PJ
+      Regra2_Futura.3.1.6.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.6.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.6.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.6.4->valor > 50K -> risco critico 
+
+    Regra2_Futura.3.1.7-Liquidação de sinistro no exterior
+      Regra2_Futura.3.1.7.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.7.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.7.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.7.4->valor > 50K -> risco critico	     
+
+   Regra2_Futura.3.1.8-Liquidação de sinistro precoce (<30 dias da contratação)
+      Regra2_Futura.3.1.8.1->valor <= 10K -> risco baixo
+	  Regra2_Futura.3.1.8.2->10k < valor <= 20K -> risco medio
+      Regra2_Futura.3.1.8.3->20k < valor <= 50K -> risco alto
+      Regra2_Futura.3.1.8.4->valor > 50K -> risco critico 
+
+---------------------------------------------------------------------------------------------------------------------
+Por exemplo uma adesão previdência PF de até R$ 10.000,00 recebe a classificação de risco baixo. Já a adesão previdência PF com valor de R$ 30.000,00 recebe a classificação de risco alto
+ e assim por diante, a depender do tipo de movimentação que esteja sendo realizada e valor.
+Para os valores mencionados devem considerar operações individuais e/ou agrupadas nos últimos 12 meses para o mesmo produto.
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+r4 -> Regra7 -> Ajustar fatores de composição do risco
+##r2 -> Regra7 -> Ajustar fatores de composição do risco
+*************************************
+3 Scores separados ou De 3 faz 1 ?
+*************************************
+#r2 seta critico automaticamente
+#Regra7_Atual -> motor de risco faz a junção de alguns fatores
+
+Regra7_Atual -> Como o processo ocorre: Além dos riscos críticos automáticos que deverão ser excluídos conforme mencionado acima, o motor de risco faz a junção de alguns fatores que permitem a 
+		classificação do cliente como risco baixo, médio, alto ou crítico, tais fatores são:
+		Atributos do cliente
+		Localização geográfica
+		Produtos
+		Transações
+		Cada um dos critérios acima recebe uma pontuação específica e a somatória corresponde ao risco final do cliente.
+
+
+Regra7_Futura -> A composição do risco será composta por 3 fatores, que são:
+	Score listas restritivas (revisado conforme detalhado em item anterior(r1))
+	Score Produto (revisado conforme detalhado em item anterior(r2))
+	Score Transação (transação detalhada em item anterior(r3) e receberá pontuação individual conforme ANEXO IV) 		
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+r5 -> Regra6 -> Adequar a classificação de risco para cada lista restritivas e armazenar as consultas realizadas
+#r5->Armazenar as consultas feitas nas listas
+#Regra6 -> Adequar a classificação de risco para cada lista restritivas e armazenar as consultas realizadas
+*******************************
+Entendimento da regra6 quanto do recebimento de nota especifica ? e qual será o formatado da tabela que vai armazenar essas informações.
+*******************************
+
+Regra6_Atual -> Inexistente no motor -> As consultas são realizadas no bureau de dados e retornam com resultado binário, não são armazenadas as informações e evidências qualitativas da consulta.
+
+Regra6_Futura -> As consultas realizadas no bureau de dados devem ser armazenadas como evidência e cada listagem deverá receber uma nota específica, de acordo com sua criticidade, conforme ANEXO III.
+- CGU -> tem 3 listas, só constar em uma a nota -> 50 ?
+- Acordo de Leniência
+- CPIM
+- CEAF
+- CNEP
+- TSE Doadores Partidos Políticos
+- MPF
+- STF
+- STJ
+- IBAMA
+- PEP
+- Trabalho Escravo
+- Mídia negativa
+- CADE
+- CNJ - Improbidade Administrativa
+serão todas as  35 listas
+-----------------------------------------------------------------------------------------------------------------------------------
+r6 -> Regra5 -> Revisão das alçadas e origem dos recursos
+#r6->Tipo de Alçada (Simples/Dupla/Tripla)
+#Regra5 -> Revisão das alçadas e origem dos recursos
+*************************************
+Definir melhor o que é 'valor' e 'alçada parmetrizada' 
+**************************************
+
+Regra5_Atual -> Inexistente no motor 
+
+Regra5_Futura -> É obrigatória a obtenção de autorização das alçadas superiores para o estabelecimento ou prosseguimento da relação de negócios já existente com clientes de maior risco (alto ou crítico),
+		 inclusive administrador, controlador, procurador, sócio, representante legal ou responsável financeiro.
+		Após a classificação do perfil de risco, deverá ser encaminhado para Aprovação de alçada superior de cliente na condição de maior risco (alto ou crítico):
+		Pendência para aprovação da área operacional (Gerente / Superintendente / Diretor)
+		A proposta de cliente ou proponente na condição de maior risco (alto ou crítico) deverá ser direcionada para ‘Pendência’ e somente sequenciar após aprovação ou retorno em caso de reprovação
+		O back-end deverá gerar uma crítica e apresentar em tela as pendências de aprovação com o status ‘pendente’.
+		A equipe da Superintendência de Operações, procederá à aprovação. 
+		A aprovação deverá ser baseada na análise de critérios definidos para aceite de subscrição ou diligências sobre o perfil do cliente para auxiliar na fundamentação da decisão, 
+		de acordo com as peculiaridades do caso concreto e a gravidade e natureza das informações desabonadoras ou irregularidades encontradas.
+		As alçadas devem ser parametrizadas.
+
+	Regra5_Futura.1 - N° de aprovadores para risco -> alto -> 1 (alçada simples/única)
+		Regra5_Futura.1.1-> Alçada1 -> Gerente de Operações
+	Regra5_Futura.2 - N° de aprovadores para risco -> crítico e valor <= 50k -> 2 (alçada dupla)
+		Regra5_Futura.2.1-> Alçada1 -> Gerente de Operações
+		Regra5_Futura.2.1-> Alçada2 -> Superintendente de Operações
+	Regra5_Futura.3 - N° de aprovadores para risco -> crítico e valor > 50k -> 3 (alçada tripla)
+		Regra5_Futura.3.1-> Alçada1 -> Gerente de Operações
+		Regra5_Futura.3.2-> Alçada2 -> Superintendente de Operações
+		Regra5_Futura.3.3-> Alçada3 -> Diretor de Operações
+
+Esforço: 
+Data prevista início:
+Data prevista fim:
+-----------------------------------------------------------------------------------------------------------------------------------
+r7 -> regra9 -> Dados cadastrais de acordo com o nível de risco
+#r7->Pedido de Upload de documentos complementares
+#regra9 -> Dados cadastrais de acordo com o nível de risco
+********************************************
+Regra9_Futura -> A depender do nível de risco identificado através do motor de riscos, deverão ser coletados os seguintes dados cadastrais.
+	Definir melhor se o front vai emitir um alerta e/ou o sinalizar pendencia de aprovação ? tipo alçada ? será um job que irá se basear na tabela de risco (existe essa tabela ?)
+*********************************************	
+
+Regra9_Atual -> Inexistente no motor -> Os dados cadastrais vêm diretamente dos front-ends e não são padronizados para serem coletados de acordo com nível de risco, 
+		conforme previsto na Avaliação Interna de Riscos.
+ 
+Regra9_Futura -> A depender do nível de risco identificado através do motor de riscos, deverão ser coletados os seguintes dados cadastrais.
+	Definir melhor
+	(As informações de cadastro incompletas ou não informadas podem agravar o perfil de risco dos clientes, podendo impactar na aceitação da proposta, 
+		caso não sejam encontradas via diligência, no momento da classificação do risco.)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+r8 -> regra8 -> Classificação do beneficiário incluído posteriormente ou troca de beneficiário (durante a vigência e/ou sinistro)
+#r8->Atualização de beneficiarios
+#regra8 -> Classificação do beneficiário incluído posteriormente ou troca de beneficiário (durante a vigência e/ou sinistro)
+**************************************
+Regra8 -> quem vai sensibilizar a atualização de beneficiário no caso do front e no caso da alta plataforma(becks) ?
+*************************************
+
+Regra8_Atual -> Inexistente no motor 
+
+Regra8_Futura -> Sempre que houver a inclusão de beneficiário anteriormente desconhecido, alteração durante a vigência da apólice/certificado, 
+		o motor de riscos deverá realizar a classificação de riscos seguindo os critérios estabelecidos e elencados em itens anteriores.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+r9 -> regra10 -> Atualização dos dados cadastrais e revalidação do risco de acordo com o nível de risco
+#r9-Atulização periodica de risco
+#regra10 -> Atualização dos dados cadastrais e revalidação do risco de acordo com o nível de risco
+*************************************************
+Regra10 -> qual a volumetria dessas informações.
+*************************************************
+
+Regra10_Atual -> Inexistente no motor -> Não há processo estabelecido para atualização cadastral e revalidação do nível de risco de acordo com as regras da Avaliação Interna de Riscos. 
+		Atualmente são realizadas ações esporádicas para incentivar que a atualização cadastral ocorra, mas ainda assim não seguem a padronização de prazo.
+
+Regra10_Futura -> O motor de riscos deverá revalidar o risco do cliente seguindo a periodicidade abaixo, assim como gerar alertas nos back-ends 
+		sobre a necessidade de atualização dos dados cadastrais do cliente.
+
+Faixa de risco Baixo – a cada 2 anos
+Faixa de risco Média – a cada 2 anos
+Faixa de risco Alto – a cada 1 ano
+Faixa de risco Crítico - semestral
+-----------------------------------------------------------------------------------------------------------------------------------
+r10 -> Regra4 -> Autonomia para alteração de regras – Compliance
+#r10->Parametrização de regras
+#Regra4 -> Autonomia para alteração de regras – Compliance
+
+Regra4_Atual -> Inexistente no motor 
+
+Regra4_Futura -> Criar módulo para facilitar a gestão das regras do motor pela área de compliance como usuário master, 
+		 de modo a facilitar ajustes de pontuações necessários e que façam sentido ao negócio, mantendo possíveis logs de alteração.
+
+Esforço: Consenso de complexidade e minimo de 6 meses.
+Data prevista início:
+Data prevista fim:
+
+-----------------------------------------------------------------------------------------------------------------------------------

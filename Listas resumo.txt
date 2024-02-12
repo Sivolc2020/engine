@@ -1,0 +1,36 @@
+	Classificação do Risco - lista	Pontuação	Listas Restritivas 
+1	Alto	50	Acordos de Leniência - CGU
+2	Alto	50	Acordos de Leniência - MPF
+3	Alto	50	Entidades Privadas Sem Fins Lucrativos Impedidas - CEPIM (CGU)
+4	Alto	50	Expulsões da Administração Federal - CEAF (CGU)
+5	Alto	50	Transparência Brasil - CNEP
+6	Alto	50	TSE - Doadores
+7	Alto	50	Antecedente Criminal (Polícia Federal)
+8	Alto	50	MPF
+9	Alto	50	STF
+10	Alto	50	STJ
+11	Alto	50	Mídia Negativa
+12	Alto	50	PEP
+13	Alto	50	Nlist
+14	Alto	50	Cliente comunicado ao COAF até duas vezes no mesmo ano civil
+15	Alto	50	Beneficiário outros ou que seja indicado em diversos certificados
+16	Alto	50	Pagamentos de indenizações e/ou resgates sem devida identificação cadastral de todas partes (segurado ou terceiros)
+17	BLOQUEIO	UN SECURITY COUNCIL SANCTION LIST (CSNU)
+18	Crítico	60	EU CONSOLIDATED LISTS OF SANCTION
+19	Crítico	60	OFAC
+20	Crítico	60	MTE - Trabalho Escravo
+21	Crítico	60	Mídia Negativa
+22	Crítico	60	Cliente estrangeiro com origem e/ou filiais em pais com deficiências apresentadas por órgãos como GAFI, OFAC, EU e/ou paraísos fiscais
+23	Crítico	60	Objeto Social de alto risco ou ONG
+24	Crítico	60	CPF/CNPJ inativo/inapto na Receita Federal
+25	Crítico	60	Impossibilidade de identificar os beneficiários finais  (proprietários e sócios) 
+26	Crítico	60	Empresa sem presença física no país
+27	Crítico	60	Operação realizada com pessoas localizadas em países que estão listados como deficientes em controles PLD-FT, conforme indicado por Órgãos como: GAFI, ONU, OFAC, etc
+28	Crítico	60	Contratação por clientes estrangeiros sem coleta de dados de identificação
+29	Médio	30	PEP RELACIONADO
+30	Médio	30	CADE - CONSELHO ADMINISTRATIVO DE DEFESA ECONÔMICA
+31	Médio	30	CNJ Improbidade Administrativa
+32	Médio	30	EMBARGOS DO IBAMA
+33	Médio	30	Endereço de cadastro em região fronteiriça 
+34	Médio	30	Resistência ao fornecimento de informações necessárias para o início de relacionamento ou para a atualização cadastral
+35	Médio	30	Mudança recorrente de endereço postal
