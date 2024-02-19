@@ -1,0 +1,16 @@
+C:\Rascunho\WriteHtml\WrireHtml\bin\Debug\net7.0-windows\WrireHtml.exe
+C:\Rascunho\WriteHtml\WrireHtml\bin\Debug\net7.0-windows\WrireHtml.deps.json
+C:\Rascunho\WriteHtml\WrireHtml\bin\Debug\net7.0-windows\WrireHtml.runtimeconfig.json
+C:\Rascunho\WriteHtml\WrireHtml\bin\Debug\net7.0-windows\WrireHtml.dll
+C:\Rascunho\WriteHtml\WrireHtml\bin\Debug\net7.0-windows\WrireHtml.pdb
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.Form1.resources
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.csproj.GenerateResource.cache
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.GeneratedMSBuildEditorConfig.editorconfig
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.AssemblyInfoInputs.cache
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.AssemblyInfo.cs
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.csproj.CoreCompileInputs.cache
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.dll
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\refint\WrireHtml.dll
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.pdb
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\WrireHtml.genruntimeconfig.cache
+C:\Rascunho\WriteHtml\WrireHtml\obj\Debug\net7.0-windows\ref\WrireHtml.dll

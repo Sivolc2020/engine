@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "WrireHtml/1.0.0": {
+        "runtime": {
+          "WrireHtml.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WrireHtml/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
